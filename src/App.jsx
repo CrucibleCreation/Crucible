@@ -368,7 +368,9 @@ export default function App() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Crimson+Pro:ital,wght@0,400;1,300;1,400&display=swap');
         *{box-sizing:border-box;margin:0;padding:0}
-        html,body{overscroll-behavior:none;min-height:100vh;background:${T.pageBg}}
+        html{scroll-behavior:smooth}
+        html,body{overscroll-behavior:none;min-height:100vh;background:${T.pageBg};-webkit-overflow-scrolling:touch}
+        body{overflow-y:scroll}
         @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
         @keyframes slideUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
         @keyframes breathe{0%,100%{opacity:.4}50%{opacity:.9}}
@@ -396,7 +398,7 @@ export default function App() {
         <div style={{position:"fixed",width:400,height:400,borderRadius:"50%",background:"radial-gradient(circle,rgba(120,200,255,0.04),transparent 70%)",right:"10%",bottom:"20%",pointerEvents:"none",zIndex:0,animation:"breathe 9s ease-in-out infinite reverse"}}/>
 
         {/* Content */}
-        <div style={{position:"relative",zIndex:1,width:"100%",maxWidth:mw,margin:"0 auto",padding:`clamp(48px,7vw,72px) ${px} 120px`,boxSizing:"border-box"}}>
+        <div style={{position:"relative",zIndex:1,width:"100%",maxWidth:mw,margin:"0 auto",padding:`clamp(48px,7vw,72px) ${px} 120px`,boxSizing:"border-box",WebkitOverflowScrolling:"touch"}}>
 
           {/* NAV */}
           <div className="f1" style={{marginBottom:28}}>
